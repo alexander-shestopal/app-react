@@ -1,14 +1,14 @@
 import React from 'react';
 
 function App() {
-	const arr = [];
+	const arr = ['a', 'b', 'c', 'd', 'e'];
 	
-	for (let i = 0; i <= 9; i++) {
-		arr.push(<li>{i+1}</li>);
-	}
+	const res = arr.map(function(item) {
+		return <li>{item}</li>;
+	});
 	
 	return <ul>
-		{arr}
+		{res}
 	</ul>;
 }
 
