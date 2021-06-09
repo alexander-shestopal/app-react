@@ -1,20 +1,17 @@
 import React from 'react';
 
 function App() {
-let tmp, sum1 = 0; 
-function getDigitsSum(num){
-  while(num){
-    tmp  = num%10;
-    num = (num - tmp)/10;
-    sum1 += tmp;
-  }
-  return sum1;
-
-}
+		function show1(name) {
+		alert('hello'+ name);
+	}
 	
+	function show2(family) {
+		alert('hello' + family);
+	}
 	return <div>
-		{getDigitsSum(12345)}
-	</div>
+		<button onClick={()=>show1('Alex')}>show Name</button>
+    	<button onClick={()=>show2('Shestopal')}>show Family</button>
+	</div>;
 }
 
 export default App;
