@@ -3,21 +3,19 @@ import uuid from 'react-uuid';
 import { nanoid } from 'nanoid';
 
 function App() {
-const users = [
-	{id: 1, name: 'user1', surn: 'surn1', age: 30},
-	{id: 2, name: 'user2', surn: 'surn2', age: 31},
-	{id: 3, name: 'user3', surn: 'surn3', age: 32},
-  	{id: 5, name: 'user5', surn: 'surn5', age: 35},
-    	{id: 8, name: 'user8', surn: 'surn8', age: 38},
+const prods = [
+	{id: id(), name: 'product1', cost: 100},
+	{id: id(), name: 'product2', cost: 200},
+	{id: id(), name: 'product3', cost: 300},
 ];
 function id() {
 return nanoid();
 }
-const rows = users.map(function(item) {
-		return <tr key={id()}>
+const rows = prods.map(function(item) {
+		return <tr key={item.id}>
+			<td>{item.id}</td>
 			<td>{item.name}</td>
-			<td>{item.surn}</td>
-      <td>{item.age}</td>
+      <td>{item.cost}</td>
 		</tr>;
 	});
 	
