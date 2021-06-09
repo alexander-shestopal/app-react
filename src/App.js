@@ -1,13 +1,15 @@
 import React from 'react';
 
 function App() {
-  function func(arg, arg2, event) {
-		console.log(arg, arg2, event);
+	const arr = [];
+	
+	for (let i = 0; i <= 9; i++) {
+		arr.push(<li>{i+1}</li>);
 	}
 	
-	return <div>
-		<button onClick={event => func('bbb', event, 'eee')}>act</button>
-	</div>;
+	return <ul>
+		{arr}
+	</ul>;
 }
 
 export default App;
