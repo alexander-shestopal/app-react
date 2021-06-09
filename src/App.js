@@ -10,8 +10,11 @@ const users = [
   	{id: 5, name: 'user5', surn: 'surn5', age: 35},
     	{id: 8, name: 'user8', surn: 'surn8', age: 38},
 ];
+function id() {
+return nanoid();
+}
 const rows = users.map(function(item) {
-		return <tr key={uuid()}>
+		return <tr key={id()}>
 			<td>{item.name}</td>
 			<td>{item.surn}</td>
       <td>{item.age}</td>
