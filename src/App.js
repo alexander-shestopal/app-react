@@ -1,16 +1,12 @@
 import React from 'react';
 
 function App() {
-		function show1(name) {
-		alert('hello'+ name);
+  function func(arg, arg2, event) {
+		console.log(arg, arg2, event);
 	}
 	
-	function show2(family) {
-		alert('hello' + family);
-	}
 	return <div>
-		<button onClick={()=>show1('Alex')}>show Name</button>
-    	<button onClick={()=>show2('Shestopal')}>show Family</button>
+		<button onClick={event => func('bbb', event, 'eee')}>act</button>
 	</div>;
 }
 
