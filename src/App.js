@@ -1,16 +1,13 @@
 import React, { useState } from 'react';
 
 function App() {
-	let [name, setName] = useState('prod');
-	let [cost, setCost] = useState('1000');
+	let [count, setCount] = useState(0);
 	
 	return <div>
-		<span>{name}</span>
-		<span>{cost}</span>
-		
-		<button onClick={() => setName('xxxx')}>btn1</button>
-		<button onClick={() => setCost('2000')}>btn2</button>
-	</div>;
+		<button onClick={()=>setCount(count - 1)}>-</button>
+		<span>{count}</span>
+		<button onClick={()=>setCount(count + 1)}>+</button>
+	</div>
 }
 
 export default App;
