@@ -1,12 +1,16 @@
 import React, { useState } from 'react';
 
 function App() {
-	let [count, setCount] = useState(0);
-	
+	let [user, setUser] = useState('Petja');
+	let [lastName, setLastName] = useState('Petrov');
+	let [age, setAge] = useState(18);
 	return <div>
-		<button onClick={()=>setCount(count - 1)}>-</button>
-		<span>{count}</span>
-		<button onClick={()=>setCount(count + 1)}>+</button>
+		<span>{user}</span>
+		<button onClick={()=>setUser('alex')}>changeUser</button>
+		<span>{lastName}</span>
+		<button onClick={()=>setLastName('Alexandrov')}>changeLastName</button>
+		<span>{age}</span>
+		<button onClick={()=>setAge(40)}>changeAge</button>
 	</div>
 }
 
