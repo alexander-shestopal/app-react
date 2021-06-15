@@ -8,6 +8,9 @@ let date = new Date();
 let str = date.getFullYear();
 return str - year;
 }
+function gradus(farengeet) {
+	return (farengeet - 32)/1.8;
+}
 
 function App() {
 	const [value, setValue] = useState(0);
@@ -18,7 +21,7 @@ function App() {
 	
 	return <div>
 		<input value={value} onChange={handleChange} />
-		<p>{age(value)}</p>
+		<p>{gradus(value)}</p>
 	</div>;
 }
 
