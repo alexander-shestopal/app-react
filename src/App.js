@@ -2,28 +2,21 @@ import React, { useState } from 'react';
 
 
 function App() {
-	const [notes, setNotes] = useState([1, 2, 3, 4, 5]);
-	const [value, setValue] = useState('');
+	const [notes, setNotes] = useState(['a', 'b', 'c', 'd', 'e']);
 	
 	const result = notes.map((note, index) => {
-		return <li key={index}>{note}</li>;
+		return <li key={index} >
+			{note}
+		<button onClick={() => remItem(index)}>del</button></li>;
 	});
 	
-	function addItem() {
-		setNotes([...notes, value]);
-		setValue('');
-	}
-	
-	function changeInput(event) {
-		setValue(event.target.value);
+	function remItem(index) {
+		setNotes([...notes.slice(0, index), ...notes.slice(index + 1)]);
 	}
 	
 	return <ul>
 		{result}
-		
-		<input value={value} onChange={changeInput} />
-		<button onClick={addItem}>add</button>
-	</ul>;
+		</ul>
 }
 
 export default App;
