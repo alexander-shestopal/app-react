@@ -1,22 +1,30 @@
 import React, { useState } from 'react';
 
-
-function App() {
-	const [notes, setNotes] = useState(['a', 'b', 'c', 'd', 'e']);
+function getSum(arr) {
+	let sum = 0;
 	
-	const result = notes.map((note, index) => {
-		return <li key={index} >
-			{note}
-		<button onClick={() => remItem(index)}>del</button></li>;
-	});
-	
-	function remItem(index) {
-		setNotes([...notes.slice(0, index), ...notes.slice(index + 1)]);
+	for (const elem of arr) {
+		sum += +elem;
 	}
 	
-	return <ul>
-		{result}
-		</ul>
+	return sum;
+}
+function App() {
+	const [notes, setNotes] = useState([1, 2, 3, 4, 5, 6, 7, 8, 9]);
+	
+	function changeHandler(index, event) {
+		setNotes([...notes.slice(0, index), event.target.value, ...notes.slice(index + 1)]);
+	}
+	const result = notes.map((note, index)=>{
+		return <input key={index}
+			value={note} 
+			onChange={event => changeHandler(index, event)} />
+	});
+	return <div>
+	{result}
+		
+		{getSum(notes)/notes.length}
+	</div>;
 }
 
 export default App;
